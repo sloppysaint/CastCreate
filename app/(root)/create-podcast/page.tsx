@@ -1,9 +1,13 @@
 import React from 'react'
 
-const page = () => {
+const CreatePodcast = () => {
   return (
-    <div>page</div>
+    <div>
+      <h1 className="text-20 font-bold text-white-1">
+        Create Podcast
+      </h1>
+    </div>
   )
 }
 
-export default page
+export default CreatePodcast;
