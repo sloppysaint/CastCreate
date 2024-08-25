@@ -83,11 +83,11 @@ const CreatePodcast = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">
-                    Username
+                    Title
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="Voicify"
                       {...field}
                     />
@@ -105,7 +105,7 @@ const CreatePodcast = () => {
               <Select onValueChange={(value) => setVoicetype(value)}>
                 <SelectTrigger
                   className={cn(
-                    "text-16 w-full border-none bg-black-1 text-gray-1"
+                    "text-16 w-full border-none bg-black-1 focus-visible:ring-offset-orange-1 text-gray-1"
                   )}
                 >
                   <SelectValue
@@ -144,7 +144,7 @@ const CreatePodcast = () => {
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="Write a short podcast description"
                       {...field}
                     />
@@ -156,7 +156,15 @@ const CreatePodcast = () => {
             />
           </div>
           <div className="flex flex-col pt-10">
-            <GeneratePodcast />
+            <GeneratePodcast 
+              setAudioStorageId = {setAudioStorageId}
+              setAudio = {setAudioUrl}
+              voiceType = {voiceType}
+              audio = {audioUrl}
+              voicePrompt = {voicePrompt}
+              setVoicePrompt = {setVoicePrompt}
+              setAudioDuration = {setAudioDuration}
+            />
 
             <GenerateThumbnail />
 
